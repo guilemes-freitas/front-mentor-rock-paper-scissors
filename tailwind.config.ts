@@ -10,9 +10,15 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'score': 'hsl(var(--text-color-score))',
+        'points': 'hsl(229, 25%, 31%)'
+      },
+      fontFamily: {
+        'barlow': ['Barlow Semi Condensed', 'sans-serif'],
+      }
     },
   },
   plugins: [],

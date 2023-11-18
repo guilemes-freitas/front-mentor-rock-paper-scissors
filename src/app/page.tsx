@@ -2,17 +2,18 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-[hsl(214, 47%, 23%) to hsl(237, 49%, 15%)]">
-      <header className="border border-[hsl(217, 16%, 45%)] rounded">
-        <div>
-          <p>Rock</p>
-          <p>Paper</p>
-          <p>Scissors</p>
-          <p>Lizard</p>
-          <p>Spock</p>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 font-barlow font-semibold">
+      <header className="border border-[#hsl(217, 16%, 45%)] rounded-lg max-w-[90%] w-[650px] flex justify-between flex-row p-4 uppercase">
+        <div className='text-white font-bold space-x-0 flex flex-col'>
+          <p className='h-4 leading-3'>Rock</p>
+          <p className='h-4 leading-3'>Paper</p>
+          <p className='h-4 leading-3'>Scissors</p>
+          <p className='h-4 leading-3'>Lizard</p>
+          <p className='h-4 leading-3'>Spock</p>
         </div>
-        <div className='bg-white rounded'>
-          <p>Score</p>
+        <div className='bg-white rounded-md text-[hsl(229, 25%, 31%)] text-center min-h-full w-28 shadow-sm p-2'>
+          <p className='text-score text-sm tracking-widest'>Score</p>
+          <h2 className='text-points text-5xl font-bold'>12</h2>
         </div>
       </header>
 
