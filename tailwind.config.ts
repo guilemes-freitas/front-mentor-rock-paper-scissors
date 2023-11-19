@@ -14,7 +14,8 @@ const config: Config = {
       },
       colors: {
         'score': 'hsl(var(--text-color-score))',
-        'points': 'hsl(229, 25%, 31%)'
+        'points': 'hsl(229, 25%, 31%)',
+        'header-outline': 'hsl(217, 16%, 45%)',
       },
       fontFamily: {
         'barlow': ['Barlow Semi Condensed', 'sans-serif'],
