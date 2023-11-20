@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-8 font-barlow font-semibold">
-      <header className="border-2 border-header-outline rounded-xl max-w-[85vw] w-[650px] flex justify-between flex-row p-4 uppercase">
+      <header className="border-2 border-header-outline rounded-lg max-w-[85vw] w-[650px] flex justify-between flex-row p-4 uppercase">
         <div className='text-white font-bold space-x-0 flex flex-col justify-center ml-2'>
           <p className='h-3.5 leading-3'>Rock</p>
           <p className='h-3.5 leading-3'>Paper</p>
@@ -11,7 +11,7 @@ export default function Home() {
           <p className='h-3.5 leading-3'>Lizard</p>
           <p className='h-3.5 leading-3'>Spock</p>
         </div>
-        <div className='bg-white rounded-lg text-[hsl(229, 25%, 31%)] text-center min-h-full w-24 shadow-sm p-2'>
+        <div className='bg-white rounded-md text-[hsl(229, 25%, 31%)] text-center min-h-full w-24 shadow-sm p-2'>
           <p className='text-score text-sm tracking-widest'>Score</p>
           <h2 className='text-points text-5xl font-bold'>12</h2>
         </div>
@@ -19,14 +19,18 @@ export default function Home() {
 
       <section>
         <div className='flex justify-center'>
-          <Image
-            className="relative text-points bg-white rounded-full"
-            src="/images/icon-scissors.svg"
-            alt="Scissors Image"
-            width={48}
-            height={48}
-            priority
-          />
+          <div className='rounded-full bg-scissors-light-yellow w-36 h-36 flex justify-center items-center shadow-outer-circle'>
+            <div className='rounded-full bg-white w-28 h-28 flex justify-center items-center shadow-inner-circle	'>
+              <Image
+                className="relative text-points"
+                src="/images/icon-scissors.svg"
+                alt="Scissors Image"
+                width={48}
+                height={48}
+                priority
+              />
+            </div>
+          </div>
         </div>
         <div className='flex flex-row justify-between w-96'>
           <Image
@@ -67,7 +71,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="border border-white rounded-xl w-28 h-10 text-white uppercase text-center">Rules</div>
+        <div className="border border-white rounded-lg tracking-widest w-28 h-10 text-white uppercase text-center p-2">Rules</div>
       </footer>
     </main>
   )
