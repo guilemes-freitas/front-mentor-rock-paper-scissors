@@ -1,3 +1,4 @@
+import TokenCircle from '@/components/TokenCircle'
 import Image from 'next/image'
 
 export default function Home() {
@@ -17,56 +18,17 @@ export default function Home() {
         </div>
       </header>
 
-      <section>
-        <div className='flex justify-center'>
-          <div className='rounded-full bg-scissors-light-yellow w-36 h-36 flex justify-center items-center shadow-outer-circle'>
-            <div className='rounded-full bg-white w-28 h-28 flex justify-center items-center shadow-inner-circle	'>
-              <Image
-                className="relative text-points"
-                src="/images/icon-scissors.svg"
-                alt="Scissors Image"
-                width={48}
-                height={48}
-                priority
-              />
-            </div>
-          </div>
+      <section className='h-[36rem] flex flex-col justify-center'>
+        <div className='flex justify-center items-center w-[32rem] h-24'>
+          <TokenCircle token='scissors' tokenColor='from-scissors to-scissors-end' />
         </div>
-        <div className='flex flex-row justify-between w-96'>
-          <Image
-            className="relative text-points bg-white rounded-full "
-            src="/images/icon-spock.svg"
-            alt="Spock Image"
-            width={48}
-            height={48}
-            priority
-          />
-          <Image
-            className="relative text-points bg-white rounded-full "
-            src="/images/icon-paper.svg"
-            alt="Paper Image"
-            width={48}
-            height={48}
-            priority
-          />
+        <div className='flex flex-row justify-between w-[32rem] h-52'>
+          <TokenCircle token='spock' tokenColor='from-spock to-spock-end' />
+          <TokenCircle token='paper' tokenColor='from-paper to-paper-end' />
         </div>
-        <div className='flex flex-row w-98 justify-around'>
-          <Image
-            className="relative text-points bg-white rounded-full "
-            src="/images/icon-lizard.svg"
-            alt="Lizard Image"
-            width={48}
-            height={48}
-            priority
-          />
-          <Image
-            className="relative text-points bg-white rounded-full "
-            src="/images/icon-rock.svg"
-            alt="Rock Image"
-            width={48}
-            height={48}
-            priority
-          />
+        <div className='flex flex-row justify-around items-center w-[32rem] h-36'>
+          <TokenCircle token='lizard' tokenColor='from-lizard to-lizard-end' />
+          <TokenCircle token='rock' tokenColor='from-rock to-rock-end' />
         </div>
       </section>
 
