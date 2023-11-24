@@ -32,7 +32,7 @@ const config: Config = {
         'barlow': ['Barlow Semi Condensed', 'sans-serif'],
       },
       boxShadow: {
-        'inner-circle': 'inset 0 3px 0 1px rgb(0 0 0/0.3)',
+        'inner-circle': 'inset 0 3px 0 1px rgb(0 0 0/0.2)',
         'outer-circle': 'inset 0 -8px 0 -3px rgb(0 0 0/0.3)'
       }
     },
