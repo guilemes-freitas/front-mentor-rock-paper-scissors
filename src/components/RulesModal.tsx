@@ -29,15 +29,15 @@ const RulesModal = ({isOpen, handleClose}: ModalProps) => {
   if (!isOpen) return null;
   
   return (
-    <div className='flex flex-col items-center p-16 gap-16 bg-white h-full w-full absolute z-10' onClick={handleClose}>
+    <div className='flex flex-col items-center py-20 gap-20 bg-white h-screen w-screen fixed z-10' onClick={handleClose}>
       <h1 className='text-3xl uppercase text-points font-bold'>Rules</h1>
-        <Image
-          className='h-64 w-64'
-          src={'/images/image-rules-bonus.svg'}
-          alt='Pentagon Image'
-          width={48}
-          height={48}
-        />
+      <Image
+        className='h-72 w-72'
+        src={'/images/image-rules-bonus.svg'}
+        alt='Pentagon Image'
+        width={48}
+        height={48}
+      />
      </div>
   )
 }
