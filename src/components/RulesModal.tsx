@@ -29,7 +29,7 @@ const RulesModal = ({isOpen, handleClose}: ModalProps) => {
   if (!isOpen) return null;
   
   return (
-    <div className='flex flex-col items-center py-20 gap-20 bg-white h-screen w-screen fixed z-10' onClick={handleClose}>
+    <div className='flex flex-col items-center py-20 gap-20 bg-white h-screen w-screen fixed z-10 relative' onClick={handleClose}>
       <h1 className='text-3xl uppercase text-points font-bold'>Rules</h1>
       <Image
         className='h-72 w-72'
@@ -37,6 +37,13 @@ const RulesModal = ({isOpen, handleClose}: ModalProps) => {
         alt='Pentagon Image'
         width={48}
         height={48}
+      />
+      <Image
+        className='absolute bottom-1'
+        src={'/images/icon-close.svg'}
+        alt='Icon Close'
+        width={24}
+        height={24}
       />
      </div>
   )
