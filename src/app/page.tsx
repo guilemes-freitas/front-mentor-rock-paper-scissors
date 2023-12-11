@@ -1,11 +1,82 @@
 "use client";
 import RulesModal from '@/components/RulesModal'
-import TokenCircle from '@/components/TokenCircle'
 import TokenSelectionSection from '@/components/TokenSelectionSection';
-import Image from 'next/image'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+
+type ChoiceType = {
+  name: string,
+  beats: Array<string>,
+}
 
 export default function Home() {
+  const choices = [
+    {
+      name: "rock",
+      beats: ["lizard","scissors"],
+    },
+    {
+      name: "paper",
+      beats: ["rock","spock"],
+    },
+    {
+      name: "scissors",
+      beats: ["lizard","paper"],
+    },
+    {
+      name: "lizard",
+      beats: ["spock","paper"],
+    },
+    {
+      name: "spock",
+      beats: ["rock","scissors"],
+    },
+  ];
+  const [init, setInit] = useState(false);
+  const [cpuChoice, setCpuChoice] = useState<ChoiceType>(
+    {
+      name: "",
+      beats: [""],
+    });
+  const [playerChoice, setPlayerChoice] = useState<ChoiceType>(
+    {
+      name: "",
+      beats: [""],
+    });
+  const [playerWin, setPlayerWin] = useState(false);
+  const [playerScore, setPlayerScore] = useState(0);
+  const [result, setResult] = useState("");
+
+  useEffect(() => {
+    setPlayerWin(compare(playerChoice, cpuChoice));
+  }, [playerChoice, cpuChoice]);
+
+  useEffect(() => {
+    result === "Calculating" && setResult(roundResult());
+  }, [result]);
+
+  const handleCpuChoice = () => {
+    return choices[Math.floor(Math.random() * 5)];
+  };
+
+  const roundResult = () => {
+    const round =
+      playerWin  ? "Win" : "Loss";
+    round === "Win" && setPlayerScore(playerScore + 1);
+    return round;
+  };
+
+  const handleChoice = (newPlayerChoice: ChoiceType) => {
+    setPlayerChoice(newPlayerChoice);
+    setCpuChoice(handleCpuChoice());
+  };
+
+  const compare = (choice: ChoiceType, opponent_choice: ChoiceType) => {
+    setResult("Calculating");
+    const { beats } = choice;
+    const { name } = opponent_choice;
+    return name in beats;
+  };
   const [score, setScore] = useState(0)
   const [rulesModalOpen, setRulesModalOpen] = useState(false);
   return (
